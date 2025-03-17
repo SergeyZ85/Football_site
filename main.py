@@ -1,6 +1,7 @@
 from fastapi import FastAPI
+
+from src.routes.router import router
+
 app=FastAPI()
 
-@app.get('/')
-def main():
-    return 'Dziuba best player in the world'
+app.include_router(router,prefix='')
